@@ -6,13 +6,13 @@ import './index.css'; // for styling
 //TASK : Create HTML
 function Form() {
   const [username, setUserName] = useState('');
-  const [email,setEmail] = useState("")
+  const [email,setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword,setConfirmPassword] = useState("")
 
   // ทำ state สำหรับเก็บค่า password , confirm password
   // state ไปผูกกับ UI
   // ทำให้ UI update state ได้
-
-
 
     return <div className='container'>
       <form className='form'>
@@ -31,14 +31,14 @@ function Form() {
         {/* #3 : Password */}
         <div className= 'form-input'>
           <label>password</label>
-          <input type='password'/>
+          <input type='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
           <small>Password must be at least 8 charecters</small>
         </div>
 
         {/* #4 : Confirm Password */}
         <div className='form-input'>
           <label>Confirm-password</label>
-          <input type='password'/>
+          <input type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
           <small>Password does not match!</small>
         </div>
         <button type='submit'>Register</button>
