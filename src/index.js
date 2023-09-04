@@ -73,8 +73,12 @@ function Form() {
         {/* #2 Email*/}
         <div className='form-input'>
           <label>email</label>
-          <input type='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
-          <small>{errorEmail}</small>
+          <input type='text' 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)}
+          style={{borderColor: emailColor}}
+          />
+          <small style={{color: emailColor}}>{errorEmail}</small>
         </div>
 
         {/* #3 : Password */}
@@ -87,13 +91,17 @@ function Form() {
         {/* #4 : Confirm Password */}
         <div className='form-input'>
           <label>Confirm-password</label>
-          <input type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
-          <small>Password does not match!</small>
+          <input 
+          type='password' 
+          value={confirmPassword} 
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <small>{errorConfirmPassword}</small>
         </div>
         <button type='submit'>Register</button>
       </form>
       </div>
-    )
+    );
 };
 
 //Render
